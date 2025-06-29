@@ -1,0 +1,144 @@
+
+.error{
+  color: red;
+}
+
+.input-group input.input-error{
+  border: 2px solid red !important;
+  outline: none;
+}
+
+.container {
+  width: 90%;
+  min-width: unset;
+  padding: 40px 30px;
+  margin: 40px auto;
+  text-align: center;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 24px; 
+  color: black;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+.texto-descricao {
+  font-size: 16px; 
+  color: #676161;
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+.texto-descricao  a {
+  color:  var(--roxo-principal);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100% !important;
+  padding: 10px !important;
+  height: 40px !important;
+  border: 1px solid gray !important;
+  /* background-color: #6761613a !important; */
+  border-radius: 15px !important;
+  font-size: 16px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+
+.btn-acao {
+  width: 100%;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color:  var(--roxo-principal); 
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-acao:hover {
+  background-color: var(--roxo-principal);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 16px;
+    height: 40px;
+  }
+
+  .input-group label {
+    font-size: 15px;
+  }
+
+  .register-link {
+    font-size: 14px;
+  }
+
+  /* .logo {
+    width: 90px;
+  } */
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .register-link {
+    font-size: 13px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group input {
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .btn-acao {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

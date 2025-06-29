@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --roxo-principal:  #6a84ed;
+  --cor-fundo: #f1f5fd;
+  --cor-para-botao: #2f97ec;
+  --cor-roxo-claro: #f0ebfd;
+  --cor-roxo-escuro: #9a89e0;
+  --cor-azul-claro: #e9f9f9;
+  --cor-branco: #f1f5fa;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   /* background-color: var(--cor-fundo);  */
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* remove rolagem da página */
+  height: 100%;
+}

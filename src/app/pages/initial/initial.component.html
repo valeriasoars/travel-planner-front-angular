@@ -1,0 +1,16 @@
+<div class="box-container">
+<section class="container-inicial">
+    <div class="box-descricao">
+        <h1>Tudo que Você Precisa para Organizar sua Próxima Viagem</h1>
+        <p>Oferecemos uma plataforma completa para você planejar cada detalhe da sua viagem, desde a escolha dos destinos até a organização do roteiro e orçamentos.</p>
+    </div>
+    <div class="box-forms">
+        <div class="btn-container">
+            <button  class="btn btn-logar" [routerLink]="'/initial/login'" [class.ativo]="formsAtual === 'login'">Entre</button>
+            <button  class="btn btn-register" [routerLink]="'/initial/register'" [class.ativo]="formsAtual === 'register'">Cadastre-se</button>
+        </div>
+        <app-login *ngIf="formsAtual === 'login'"></app-login>
+        <app-register *ngIf="formsAtual === 'register'"></app-register>
+    </div>
+</section>
+</div>
