@@ -105,12 +105,12 @@
   .btn {
     width: 100%;
     max-width: 300px;
-    
+    font-size: 0.80rem;
   }
 
   .btn-logar,
   .btn-register {
-    width: 100%;
+    width: 90%;
   }
 
 }

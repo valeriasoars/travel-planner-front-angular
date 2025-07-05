@@ -1,36 +1,102 @@
 <div class="container">
-
   <h2>{{ textoTitulo }}</h2>
   <!-- <p class="texto-descricao">{{ textoDescricao }}</p> -->
 
   <form [formGroup]="userForm" (ngSubmit)="submit()">
     <div class="input-group" *ngIf="btnAcao == 'Cadastre-se'">
       <label for="name">Nome</label>
-      <input type="name" id="name" formControlName="name"
-      [class.input-error]="userForm.get('name')?.invalid && userForm.get('name')?.touched" />
+      <input
+        type="name"
+        id="name"
+        formControlName="name"
+        [class.input-error]="
+          userForm.get('name')?.invalid && userForm.get('name')?.touched
+        "
+      />
+      <div
+        *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
+        class="error"
+      >
+        Digite seu nome
+      </div>
     </div>
 
     <div class="input-group">
       <label for="email">E-mail</label>
-      <input type="email" id="email" formControlName="email" 
-      [class.input-error]="userForm.get('email')?.invalid && userForm.get('email')?.touched"/>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        [class.input-error]="
+          userForm.get('email')?.invalid && userForm.get('email')?.touched
+        "
+      />
+      <div
+        *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched"
+        class="error"
+      >
+        Digite o e-mail
+      </div>
     </div>
 
     <div class="input-group">
       <label for="password">Senha</label>
-      <input type="password" id="password" formControlName="password" 
-      [class.input-error]="userForm.get('password')?.invalid && userForm.get('password')?.touched"
-      />
+      <div class="password-wrapper">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          id="password"
+          formControlName="password"
+          [class.input-error]="
+            userForm.get('password')?.invalid &&
+            userForm.get('password')?.touched
+          "
+        />
+        <i
+          class="bi"
+          [ngClass]="showPassword ? 'bi-eye-slash-fill' : 'bi-eye-fill'"
+          (click)="showPassword = !showPassword"
+        ></i>
+      </div>
+      <div
+        *ngIf="
+          userForm.get('password')?.invalid && userForm.get('password')?.touched
+        "
+        class="error"
+      >
+        Digite a senha
+      </div>
     </div>
 
     <div class="input-group" *ngIf="btnAcao == 'Cadastre-se'">
       <label for="confirmedPassword">Confirmar Senha</label>
-      <input
-        type="password"
-        id="confirmedPassword"
-        formControlName="confirmedPassword"
-        [class.input-error]="userForm.get('confirmedPassword')?.invalid && userForm.get('confirmedPassword')?.touched"
-      />
+      <div class="password-wrapper">
+        <input
+          [type]="showconfirmedPassword ? 'text' : 'password'"
+          id="confirmedPassword"
+          formControlName="confirmedPassword"
+          [class.input-error]="
+            userForm.get('confirmedPassword')?.invalid &&
+            userForm.get('confirmedPassword')?.touched
+          "
+        />
+        <i
+          class="bi"
+          [ngClass]="
+            showconfirmedPassword ? 'bi-eye-slash-fill' : 'bi-eye-fill'
+          "
+          (click)="showconfirmedPassword = !showconfirmedPassword"
+        ></i>
+      </div>
+
+      <div
+        *ngIf="
+          userForm.get('confirmedPassword')?.invalid &&
+          userForm.get('confirmedPassword')?.touched
+        "
+        class="error"
+      >
+        Digite a confirmação de senha
+      </div>
     </div>
 
     <button type="submit" class="btn-acao">{{ btnAcao }}</button>

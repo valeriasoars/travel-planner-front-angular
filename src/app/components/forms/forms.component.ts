@@ -15,6 +15,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class FormsComponent implements OnInit{
 
+  showPassword: boolean = false
+  showconfirmedPassword: boolean = false
+
   @Input() textoTitulo!: String
   @Input() textoDescricao!: String
   @Input() btnAcao!: String
