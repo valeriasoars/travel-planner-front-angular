@@ -23,6 +23,7 @@ export class LoginComponent {
     this.authService.login(user).subscribe({
       next:(response) => {
         if(response.data != null){
+          localStorage.setItem('token', response.data.token)
           this.toastr.success(response.message, 'Sucesso!')
           this.router.navigate(['/dashboard'])
         }else{
