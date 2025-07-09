@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsComponent } from "../../components/forms/forms.component";
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { RegisterModel } from '../../models/registerModel';
 import {  ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';

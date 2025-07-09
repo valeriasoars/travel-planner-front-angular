@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsComponent } from "../../components/forms/forms.component";
 import { LoginModel } from '../../models/loginModel';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -33,6 +33,7 @@ export class LoginComponent {
       error:(err) => {
         const mensagemErro = err?.error?.error || 'Erro inesperado ao cadastrar.'
         this.toastr.error(mensagemErro, 'Erro!')
+        
       }
     })
   }

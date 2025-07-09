@@ -1,0 +1,6 @@
+<div class="d-flex flex-column gap-3">
+  <div *ngFor="let trip of trips" >
+    <app-card-travel [trip]="trip" (tripDeleted)="onTripDeleted($event)"></app-card-travel>
+  </div>
+</div>
+

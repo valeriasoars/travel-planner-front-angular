@@ -6,6 +6,7 @@ import { provideToastr } from 'ngx-toastr';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './interceptor/auth.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,5 +17,5 @@ export const appConfig: ApplicationConfig = {
     provideToastr({
       timeOut: 10000,
       preventDuplicates: true,
-    }), ]
+    }), provideAnimationsAsync(), ]
 };
