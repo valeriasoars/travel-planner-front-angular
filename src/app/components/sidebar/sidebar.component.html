@@ -25,9 +25,12 @@
 
     <div >
       <div class="list-group-flush px-2" >
-        <a class="list-group-item list-group-item-action custom-link active" [routerLink]="'/trips'">  <i class="bi bi-geo-alt me-2"></i>Viagens</a>
-        <a class="list-group-item list-group-item-action custom-link active"> <i class="bi bi-globe-americas me-2"></i>Países</a>
-        <a class="list-group-item list-group-item-action custom-link active"> <i class="bi bi-camera-reels me-2"></i>Memorias</a>
+        <a class="list-group-item list-group-item-action custom-link active" [routerLink]="'/dashboard/trips'"  routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }">  <i class="bi bi-geo-alt me-2"></i>Viagens</a>
+        <a class="list-group-item list-group-item-action custom-link active" routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }"> <i class="bi bi-globe-americas me-2" ></i>Países</a>
+        <a class="list-group-item list-group-item-action custom-link active" routerLinkActive="active"
+     [routerLinkActiveOptions]="{ exact: true }"> <i class="bi bi-camera-reels me-2" ></i>Memorias</a>
       </div>
 
       <p style="border-bottom: 1px solid white; margin-bottom: 15px; padding: 10px; margin: 15px;"></p>

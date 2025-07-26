@@ -1,0 +1,40 @@
+<div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.5);" aria-hidden="true">
+  <div  class="modal-dialog modal-dialog-right">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-5">Adicionar Despesa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form  [formGroup]="expenseForm" (ngSubmit)="addExpense()">
+            <label for="category" class="form-label">Categoria</label>
+            <select class="form-select" id="categoryExpenseId" name="categoryExpenseId" formControlName="categoryExpenseId" required>
+              <option value="">Selecione uma categoria</option>
+              <option *ngFor="let category of categories" [value]="category._id">{{ category.name}}</option>
+            </select>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Descrição</label>
+              <input type="text" class="form-control" id="description" name="description" formControlName="description" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="value" class="form-label">Valor</label>
+              <input type="number" class="form-control" id="value" name="value" formControlName="value"required />
+            </div>
+
+            <div class="mb-3">
+              <label for="date" class="form-label">Data</label>
+              <input type="Date" class="form-control" id="date" name="data" formControlName="date" required />
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Salvar</button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

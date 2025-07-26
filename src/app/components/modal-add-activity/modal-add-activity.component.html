@@ -1,0 +1,40 @@
+<div  class="modal fade show d-block" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Adicione atividade para esse dia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="activityForm" (ngSubmit)="addActivity()">
+          <div class="mb-3">
+            <label for="activity" class="form-label">Atividade</label>
+            <input type="text" class="form-control" id="activity" name="activity" formControlName="activity" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="observation" class="form-label">Observação</label>
+            <input type="text" class="form-control" id="observation" name="observation" formControlName="observation" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="time" class="form-label">Horario</label>
+            <input type="text" class="form-control" id="time" name="time"  formControlName="time" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label">Local</label>
+            <input type="text" class="form-control" id="location"  name="location" formControlName="location" required />
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

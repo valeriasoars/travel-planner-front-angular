@@ -1,0 +1,72 @@
+<app-information-travel></app-information-travel>
+
+<div id="page-content-wrapper-information" class="p-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
+        <h3 class="mb-0">Orçamento</h3>
+        <button class="btn btn-despesa btn-sm" type="button"  (click)="openAddExpenseModal()">
+        + despesa
+        </button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <div class="caixa-despesa">
+                <h6 class="mb-3">Despesas</h6>
+
+                <div *ngFor="let expense of expenses" class="border rounded p-3 mb-3 d-flex justify-content-between align-items-start">
+                    <div>
+                        <strong>{{expense.description}}</strong>
+                        <p class="mb-1 text-muted">Categoria: {{getCategoryName(expense.categoryExpenseId) }}</p>
+                        <small class="text-muted">{{expense.date | date: 'EEEE, d MMMM' : 'UTC'}}</small>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <div class=" fw-bold">R$ {{expense.value}}</div>
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item">Editar</a></li>
+                                <li><a class="dropdown-item text-danger" (click)="deleteExpense(expense._id)">Excluir</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Caixa de Progresso -->
+        <div class="col-md-4 mb-4">
+            <div class="caixa-orcamento">
+                <div class="text-center mb-3" >
+                    <strong>Total gasto:</strong><br />
+                    <span>R$ {{balance.totalSpent}} / R$ {{balance.budget}}</span>
+                </div>
+
+                <!-- Círculo de Progresso -->
+                <div class="circular-progress" [ngStyle]="{'background': 'conic-gradient(#6a84ed ' + percentageSpent + '%, #e0e0e0 ' + percentageSpent + '%)'}">
+                    <div class="value-container">
+                        {{ percentageSpent | number:'1.0-0' }}%
+                    </div>
+                </div>
+                <p class="text-muted text-center">Saldo restante: R$ {{balance.remainingBalance}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-modal-add-expense 
+  *ngIf="isModalOpen" 
+  [tripId]="tripId"
+  (close)="closeAddExpenseModal()" 
+  (expenseAdded)="loadData()">
+</app-modal-add-expense>
+
+
+
+
+
+
+

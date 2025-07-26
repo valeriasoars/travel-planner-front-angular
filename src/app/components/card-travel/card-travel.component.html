@@ -5,7 +5,7 @@
       {{ trip.startDate | date : "dd/MM/yyyy" : "UTC" }} - {{ trip.endDate | date : "dd/MM/yyyy" : "UTC" }}
     </p>
 
-    <button class="btn btn-outline-secondary btn-sm mt-2" (click)="navigateToPlanning()">
+    <button class="btn btn-outline-secondary btn-sm mt-2" (click)="navigateToPlanning(trip._id)">
       <i class="bi bi-box-arrow-in-right me-1"></i> Planejar
     </button>
   </div>

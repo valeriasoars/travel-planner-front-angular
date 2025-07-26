@@ -1,23 +1,24 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ModalTravelComponent } from '../modal-travel/modal-travel.component';
-import { MatDialog } from '@angular/material/dialog';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TripService } from '../../services/trip/trip.service';
+import { AuthService } from '../../services/auth/auth.service';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterLink, ModalTravelComponent, CommonModule],
+  imports: [RouterLink, CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
   @Output() novaViagem = new EventEmitter<void>();
 
+
+  constructor(private authService: AuthService){}
+
   emitirNovaViagem() {
     this.novaViagem.emit();
   }
+
 
   ngAfterViewInit(): void {
     const menuToggle = document.getElementById('menu-toggle');
@@ -28,5 +29,7 @@ export class SidebarComponent {
     });
   }
 
-  desconect() {}
+  desconect() {
+    this.authService.logout()
+  }
 }

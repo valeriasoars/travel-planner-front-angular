@@ -1,0 +1,21 @@
+
+.modal-dialog-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0;
+  height: 100%;
+  max-width: 400px;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal.fade.show .modal-dialog-right {
+  transform: translateX(0);
+}
+
+.modal-content {
+  height: 100%;
+  border-radius: 0;
+}

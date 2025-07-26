@@ -13,30 +13,46 @@
     align-items: center;
     justify-content: space-around;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .box-descricao{
     width: 60%;
     height: 100%;
-    background-color:var(--roxo-principal);
-    color: var(--cor-roxo-claro);
+    background: linear-gradient(135deg, var(--roxo-principal) 0%, #6c5ce7 100%);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 15px 0 0 15px;
+    border-radius: 20px 0 0 20px;
+    position: relative;
+    overflow: hidden;
 }
 
+
 .box-descricao h1{
-    width: 60%;
-    font-size: 2.5rem;
-    margin-bottom: 35px;
+    width: 70%;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .box-descricao p{
-    width: 60%;
-    font-size: 1.2rem;
+    width: 70%;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    opacity: 0.95;
 }
 
 .box-forms{

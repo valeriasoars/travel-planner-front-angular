@@ -25,7 +25,7 @@ export class LoginComponent {
         if(response.data != null){
           localStorage.setItem('token', response.data.token)
           this.toastr.success(response.message, 'Sucesso!')
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/dashboard/trips'])
         }else{
           this.toastr.error(response.message, 'Erro!')
         }

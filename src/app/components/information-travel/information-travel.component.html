@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container-fluid">
+    <div *ngIf="trip" class="d-flex justify-content-between align-items-center w-100 px-3 py-2">
+
+      <div class="trip-info d-flex flex-column ">
+        <span class="destination fs-5 fw-bold">{{ trip.destination }}</span>
+        <small class="dates">{{ trip.startDate | date:'dd/MM/yyyy' : 'UTC' }} - {{ trip.endDate | date:'dd/MM/yyyy' : 'UTC' }}</small>
+      </div>
+
+      <div class="budget-info text-end">
+        <span class="budget-value fs-5 fw-bold">R$ {{ trip.totalBudget }}</span><br />
+        <small class="budget-label ">Orçamento total</small>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="d-flex" id="wrapper">
+
+<div class="sidebar custom-sidebar d-flex flex-column justify-content-between align-items-center py-4" id="sidebar-wrapper">
+  
+  <div class="text-center fw-bold mb-5 small" style="color: white; font-size: 2rem; ">T|P</div>
+
+
+  <div class="nav flex-column text-center w-100">
+    <a class="nav-link" title="Itinerário" [routerLink]="['/itinerary', trip?._id]" routerLinkActive="active" >
+      <i class="bi bi-map"></i>
+      <div class="small">Itinerário</div>
+    </a>
+    <a  class="nav-link" title="Orçamento" [routerLink]="['/budget', trip?._id]" routerLinkActive="active">
+      <i class="bi bi-cash-coin"></i>
+      <div class="small">Orçamento</div>
+    </a>
+  </div>
+
+
+  <div class="nav flex-column text-center w-100 mt-auto">
+    <a class="nav-link ">
+      <i class="bi bi-gear"></i>
+      <div class="small">Config</div>
+    </a>
+    <a class="nav-link"  (click)="desconect()" style="cursor: pointer;">
+      <i class="bi bi-box-arrow-right"></i>
+      <div class="small">Sair</div>
+    </a>
+  </div>
+</div>
+
+  <div id="page-content-wrapper" class="flex-grow-1">
+    <div class="container-fluid  pt-4">
+
+    </div>
+  </div>
+</div>

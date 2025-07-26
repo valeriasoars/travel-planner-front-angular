@@ -23,4 +23,9 @@ export class AuthService {
   register(register: RegisterModel): Observable<ResponseModel<RegisterModel>>{
     return this.http.post<ResponseModel<RegisterModel>>(`${this.apiUrl}/user/register`, register)
   }
+
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/']);
+  }
 }

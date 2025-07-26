@@ -18,7 +18,6 @@ export class ModalTravelComponent implements OnInit {
 
   constructor( private tripService: TripService, private fb: FormBuilder, private toastr: ToastrService){}
 
-
   ngOnInit(): void {
     this.formsTrip()
   }
@@ -31,7 +30,6 @@ export class ModalTravelComponent implements OnInit {
       endDate: ['', [Validators.required]]
     })
   }
-
 
   addTrip(){
     if(this.tripForm.invalid) return

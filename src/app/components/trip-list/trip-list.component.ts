@@ -3,6 +3,7 @@ import { TripModel } from '../../models/tripModel';
 import { TripService } from '../../services/trip/trip.service';
 import { CardTravelComponent } from '../card-travel/card-travel.component';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trip-list',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class TripListComponent {
   trips: TripModel[] = []
 
-  constructor(private tripService: TripService) {}
+  constructor(private tripService: TripService, private router: Router) {}
 
   ngOnInit(): void {
     this.tripService.getTrip().subscribe({
@@ -37,4 +38,6 @@ export class TripListComponent {
   public refreshTrips() {
     this.loadTrips();
   }
+
+
 }

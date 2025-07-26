@@ -17,8 +17,8 @@ export class CardTravelComponent {
 
   constructor(private router: Router, private tripService: TripService) {}
 
-  navigateToPlanning() {
-    this.router.navigate(['/', this.trip._id])
+  navigateToPlanning(tripId: string) {
+    this.router.navigate(['/itinerary', tripId])
   }
 
   editTrip() {}

@@ -1,0 +1,95 @@
+
+.btn-despesa {
+  background-color: var(--cor-para-botao);
+  color: white;
+}
+
+button.btn-despesa.btn-sm {
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-despesa:hover {
+  color: var(--cor-para-botao);
+  border-color: var(--cor-para-botao);
+  background-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--cor-para-botao);
+  border-color: var(--cor-para-botao);
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-roxo-escuro);
+  border-color: var(--cor-roxo-escuro);
+}
+
+
+.budget-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.budget-expenses,
+.budget-progress,
+.caixa-orcamento,
+.caixa-despesas {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.budget-progress {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circular-progress {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #6a84ed;
+  margin: 0 auto;
+  transition: background 0.5s ease-in-out;
+}
+
+.value-container {
+  width: 90px;
+  height: 90px;
+  background: white;
+  color: var(--roxo-principal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .budget-container {
+    flex-direction: column;
+  }
+
+  .budget-progress {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+
