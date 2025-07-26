@@ -31,7 +31,7 @@ export class LoginComponent {
         }
       },
       error:(err) => {
-        const mensagemErro = err?.error?.error || 'Erro inesperado ao cadastrar.'
+        const mensagemErro = err?.error?.error || 'Erro inesperado ao fazer login.'
         this.toastr.error(mensagemErro, 'Erro!')
         
       }
